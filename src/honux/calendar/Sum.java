@@ -16,8 +16,10 @@ public class Sum {
 		System.out.println(s1 + "," + s2);
 		a = Integer.parseInt(s1);
 		b = Integer.parseInt(s2);
+		
 		//System.out.println("두 수의 합은" + (a+b)+"입니다");
 		System.out.printf("%d의 %d은 %d입니다.",a, b, a + b);
+		scanner.close();//스캐너를 닫아줘야한다 워닝을 없애려고 해야한다
 	}
 
 }
