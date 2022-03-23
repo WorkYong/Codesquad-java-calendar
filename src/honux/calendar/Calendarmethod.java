@@ -3,9 +3,10 @@ package honux.calendar;
 import java.util.Scanner;
 
 public class Calendarmethod {
+	
 	private static final int[] Max_DAYS = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 	
-	public int getMaxDaysOfMonth(int month) {
+	public static int getMaxDaysOfMonth(int month) {
 		return Max_DAYS[month - 1];
 	}
 	
@@ -20,12 +21,22 @@ public class Calendarmethod {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("달을 입력하세요.");
-		int month = scanner.nextInt();
+		Calendarmethod cal = new Calendarmethod();
 		
-		int[] maxDays = {31, 28 ,31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		System.out.println("반복횟수를 입력하세요.");
+		int repeat = scanner.nextInt();
 		
-		System.out.printf("%d월은 %d일까지 있습니다. \n", month, maxDays[month -1]);//배열의 숫자는 0부터시작이기떄매 뺴준다
+		for (int i =0; i < repeat; i++) {
+			System.out.println("달을 입력하세요.");
+			int month = scanner.nextInt();
+					
+			System.out.printf("%d월은 %d일까지 있습니다. \n", month, cal.getMaxDaysOfMonth(month));//배열의 숫자는 0부터시작이기떄매 뺴준다
+			
+			//cal.printSampleCalendar();
+		}
+		
+		System.out.println("힘들다 그만 돌려라.");
+			
 		scanner.close();
 	}
 
